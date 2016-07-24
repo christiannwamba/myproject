@@ -39,6 +39,7 @@
     });
 
     app.factory('placeService', function($resource){
+    	// I am not so good with ngResoures I use $http 
         return $resource('/api/place');
     });
     // create the controller and inject Angular's $scope
@@ -48,6 +49,13 @@
 	    
         
         });
+        
+    app.controller('placesController', function($scope, $http) {
+    	var url = 'http://localhost:3000/api/places';
+        $http.get(url).success(function(data){
+        	console.log(data);
+        });
+    });
 
     app.controller('aboutController', function($scope) {
         $scope.message = 'Look! I am an about page.';
