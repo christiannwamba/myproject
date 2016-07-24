@@ -1,0 +1,22 @@
+<!-- home.html -->
+   
+   <br>
+   <br>
+   <br>
+   <div class="container">
+          <div class="jumbotron text-center">
+                <h1>Home Page</h1>
+
+        
+        
+            </div>
+            <div id="post-stream" class="row">
+	                <h4>Place Feed</h4>
+		            <div class="place" ng-repeat="place in places | orderBy:'created_at':true"> 
+			        <p>{{place.name}}</p>
+			        <p>{{place.address}}</p>
+			        <small class="pull-right">{{place.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+		      </div>
+        </div>
+</div>
+    
